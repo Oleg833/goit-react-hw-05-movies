@@ -7,7 +7,7 @@ axios.defaults.params = {
   orientation: 'horizontal',
   per_page: 12,
 };
-
+//   const PIXA_URL = `https://pixabay.com/api/?key=34212854-f6457ae4e5e1013dd0f507693&q=${param}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${page}`;
 const getImages = async (query, page) => {
   const { data } = await axios.get(`?q=${query}&page=${page}`);
   return data;
