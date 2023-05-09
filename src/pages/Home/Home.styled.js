@@ -9,7 +9,7 @@ export const HomeContainer = styled.div`
 
 export const HomeTitle = styled.h1`
   font-weight: 700;
-  color: #3f51b5;
+  color: blueviolet;
   margin: 30px, 0;
   text-decoration: none;
 `;
@@ -65,5 +65,5 @@ export const MovieTitle = styled.div`
   padding: 5px;
   margin: 0px;
   font-size: 10px;
-  color: #3f51b5;
+  color: blueviolet;
 `;

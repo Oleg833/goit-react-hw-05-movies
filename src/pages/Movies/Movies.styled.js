@@ -43,6 +43,8 @@ export const Button = styled.button`
   display: inline-block;
   width: 78px;
   height: 48px;
+  margin-right: 20px;
+  margin-top: 3px;
   border: 0;
   opacity: 0.6;
   font-size: 20px;
@@ -50,7 +52,7 @@ export const Button = styled.button`
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   outline: none;
-  color: #3f51b5;
+  color: blueviolet;
   &:hover {
     opacity: 1;
   }
@@ -108,5 +110,5 @@ export const MovieTitle = styled.div`
   padding: 5px;
   margin: 0px;
   font-size: 10px;
-  color: #3f51b5;
+  color: blueviolet;
 `;

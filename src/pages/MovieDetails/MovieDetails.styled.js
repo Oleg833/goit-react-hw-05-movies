@@ -56,7 +56,7 @@ export const InfoLink = styled(NavLink)`
   text-decoration: none;
   font-weight: 600;
   &.active {
-    color: #3f51b5;
+    color: blueviolet;
     font-weight: 700;
     transform: scale(1.3);
   }

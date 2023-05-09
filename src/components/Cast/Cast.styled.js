@@ -53,7 +53,7 @@ export const CastDescr = styled.div`
   padding: 5px;
   margin: 0px;
   font-size: 10px;
-  color: #3f51b5;
+  color: blueviolet;
 `;
 
 export const CastName = styled.h3`
