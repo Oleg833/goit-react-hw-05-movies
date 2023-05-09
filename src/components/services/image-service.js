@@ -1,16 +1,110 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://pixabay.com/api/';
+axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 axios.defaults.params = {
-  key: '34212854-f6457ae4e5e1013dd0f507693',
-  image_type: 'photo',
-  orientation: 'horizontal',
-  per_page: 12,
-};
-//   const PIXA_URL = `https://pixabay.com/api/?key=34212854-f6457ae4e5e1013dd0f507693&q=${param}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${page}`;
-const getImages = async (query, page) => {
-  const { data } = await axios.get(`?q=${query}&page=${page}`);
-  return data;
+  api_key: '53d5445e8f959aee965448ea492bd06d',
+  include_adults: false,
 };
 
-export default getImages;
+export const fetchTrending = async () => {
+  return axios
+    .get(`/trending/all/day?`)
+    .then(({ data: { results } }) =>
+      results.map(({ id, title, poster_path }) => ({
+        id,
+        title,
+        poster: poster_path,
+      }))
+    )
+    .catch(error => {
+      alert(error.massage);
+    });
+};
+
+export const fetchByQuery = async query => {
+  return axios
+    .get(`/search/movie?query=${query}`)
+    .then(({ data: { results } }) =>
+      results.map(({ id, title, poster_path: poster }) => ({
+        id,
+        title,
+        poster,
+      }))
+    )
+    .catch(error => {
+      alert(error.massage);
+    });
+};
+
+export const fetchMovieDetails = async movieId => {
+  try {
+    const {
+      data: {
+        id,
+        poster_path: poster,
+        title,
+        release_date: releaseYear,
+        vote_average: userScore,
+        overview,
+        genres,
+      },
+    } = await axios.get(`/movie/${movieId}?`);
+    return {
+      id,
+      poster,
+      title,
+      releaseYear: new Date(releaseYear).getFullYear(),
+      userScore: Math.round(userScore * 10),
+      overview,
+      genres,
+    };
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+// export const fetchMovieCredits = movieId => {
+//   return axios
+//     .get(`/movie/${movieId}/credits?`)
+//     .then(({ data: { cast } }) =>
+//       cast.map(({ id, name, character, profile_path: poster }) => ({
+//         id,
+//         name,
+//         character,
+//         poster,
+//       }))
+//     )
+//     .catch(error => {
+//       alert(error.massage);
+//     });
+// };
+
+export const fetchMovieCredits = async movieId => {
+  try {
+    const {
+      data: { cast },
+    } = await axios.get(`/movie/${movieId}/credits?`);
+    return cast.map(({ id, name, character, profile_path: poster }) => ({
+      id,
+      name,
+      character,
+      poster,
+    }));
+  } catch (error) {
+    alert(error.massage);
+  }
+};
+
+export const fetchMovieReviews = movieId => {
+  return axios
+    .get(`/movie/${movieId}/reviews?`)
+    .then(({ data: { results } }) =>
+      results.map(({ id, author, content }) => ({
+        id,
+        author,
+        content,
+      }))
+    )
+    .catch(error => {
+      alert(error.massage);
+    });
+};
