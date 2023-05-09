@@ -22,11 +22,11 @@ export const MovieContainer = styled.div`
 
 export const Img = styled.img`
   border-radius: 25px;
-  width: 300px;
+  max-width: 300px;
 `;
 
 export const MovieInfo = styled.div`
-  padding-left: 30px;
+  padding-left: 3px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
