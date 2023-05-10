@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { ReviewsContainer } from './Reviews.styled';
 import Loader from 'components/Loader/Loader';
-import { fetchMovieReviews } from 'components/services/image-service';
+import { fetchMovieReviews } from 'services/image-service';
 
 const Reviews = () => {
   const { movieId } = useParams('movieId');

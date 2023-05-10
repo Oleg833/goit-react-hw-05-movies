@@ -11,7 +11,7 @@ import {
   CastChar,
 } from './Cast.styled';
 import Loader from 'components/Loader/Loader';
-import { fetchMovieCredits } from 'components/services/image-service';
+import { fetchMovieCredits } from 'services/image-service';
 
 const Cast = () => {
   const { movieId } = useParams('movieId');

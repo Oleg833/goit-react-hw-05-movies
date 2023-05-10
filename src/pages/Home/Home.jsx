@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import MovieListComponent from 'components/MoviesList/MoviesList';
 import { HomeContainer, HomeTitle } from './Home.styled';
 import Loader from 'components/Loader/Loader';
-import { fetchTrending } from 'components/services/image-service';
+import { fetchTrending } from 'services/image-service';
 
 const Home = () => {
   const [movies, setMovies] = useState(null);

@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { FormDiv, Form, Input, Button } from './Movies.styled';
 import MoviesListComponent from '../../components/MoviesList/MoviesList';
 import Loader from 'components/Loader/Loader';
-import { fetchByQuery } from 'components/services/image-service';
+import { fetchByQuery } from 'services/image-service';
 
 const Movies = () => {
   const [query, setQuery] = useState('');

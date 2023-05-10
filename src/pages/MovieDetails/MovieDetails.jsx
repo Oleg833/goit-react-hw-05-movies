@@ -11,7 +11,7 @@ import {
   InfoList,
   InfoLink,
 } from './MovieDetails.styled';
-import { fetchMovieDetails } from 'components/services/image-service';
+import { fetchMovieDetails } from 'services/image-service';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
