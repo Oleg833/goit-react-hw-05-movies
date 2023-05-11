@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-export const Nav = styled.nav`
+export const NavStyled = styled.nav`
   top: 0;
   left: 0;
   position: sticky;
@@ -26,7 +26,7 @@ export const Nav = styled.nav`
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 `;
 
-export const SNavLink = styled(NavLink)`
+export const NavLinkStyled = styled(NavLink)`
   font-weight: 600;
   font-size: 25px;
   color: blueviolet;

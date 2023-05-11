@@ -1,15 +1,15 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 import Loader from '../../components/Loader/Loader';
-import { Nav, SNavLink, Container } from './Layout.styled';
+import { NavStyled, NavLinkStyled, Container } from './Layout.styled';
 
 const Layout = () => {
   return (
     <>
-      <Nav>
-        <SNavLink to="/">Home</SNavLink>
-        <SNavLink to="/movies">Movies</SNavLink>
-      </Nav>
+      <NavStyled>
+        <NavLinkStyled to="/">Home</NavLinkStyled>
+        <NavLinkStyled to="/movies">Movies</NavLinkStyled>
+      </NavStyled>
 
       <Container>
         <Suspense fallback={<Loader />}>

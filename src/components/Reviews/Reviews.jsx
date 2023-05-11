@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { ReviewsContainer } from './Reviews.styled';
 import Loader from 'components/Loader/Loader';
 import { fetchMovieReviews } from 'services/image-service';
+import Text from 'components/Text/Text.styled';
 
 const Reviews = () => {
   const { movieId } = useParams('movieId');
@@ -40,7 +41,7 @@ const Reviews = () => {
         <p>Ther is nothing found</p>
       )}
       {isLoading && <Loader />}
-      {onError && <p>There is nothing found</p>}
+      {onError && <Text textAlign="center">{onError}</Text>}
     </ReviewsContainer>
   );
 };
