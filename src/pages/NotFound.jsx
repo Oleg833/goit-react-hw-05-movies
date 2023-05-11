@@ -1,10 +1,11 @@
-import { NavLink } from 'react-router-dom';
+import Text from 'components/Text/Text.styled';
+import { NavLinkStyled } from './Layout/Layout.styled';
 
 const NotFound = () => {
   return (
     <>
-      <h2>Oops... nothing found...</h2>
-      <NavLink to="/">Back to home</NavLink>
+      <Text textAlign="center">Oops... nothing found...</Text>
+      <NavLinkStyled to="/">Back to home</NavLinkStyled>
     </>
   );
 };
