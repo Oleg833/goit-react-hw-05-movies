@@ -12,6 +12,7 @@ import {
 } from './Cast.styled';
 import Loader from 'components/Loader/Loader';
 import { fetchMovieCredits } from 'services/image-service';
+import Text from 'components/Text/Text.styled';
 
 const Cast = () => {
   const { movieId } = useParams('movieId');
@@ -62,7 +63,7 @@ const Cast = () => {
         </CastList>
       )}
       {isLoading && <Loader />}
-      {onError && <p>Something went wrong</p>}
+      {onError && <Text textAlign="center">{onError}</Text>}
     </CastContainer>
   );
 };
