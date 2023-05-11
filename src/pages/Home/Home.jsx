@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import MovieListComponent from 'components/MoviesList/MoviesList';
+import MovieList from 'components/MoviesList/MoviesList';
 import { HomeContainer, HomeTitle } from './Home.styled';
 import Loader from 'components/Loader/Loader';
 import { fetchTrending } from 'services/image-service';
+import Text from 'components/Text/Text.styled';
 
 const Home = () => {
   const [movies, setMovies] = useState(null);
@@ -29,8 +30,8 @@ const Home = () => {
     <HomeContainer>
       <HomeTitle>Trending today</HomeTitle>
       {isLoading && <Loader />}
-      {onError && <p>Something went wrong!</p>}
-      {movies && <MovieListComponent movies={movies} />}
+      {onError && <Text textAlign="center">{onError}</Text>}
+      {movies && <MovieList movies={movies} />}
     </HomeContainer>
   );
 };

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import MoviesListComponent from '../../components/MoviesList/MoviesList';
+import MoviesList from '../../components/MoviesList/MoviesList';
 import Loader from 'components/Loader/Loader';
 import { fetchByQuery } from 'services/image-service';
 import SearchForm from 'components/SearchForm/SearchForm';
@@ -45,7 +45,7 @@ const Movies = () => {
       {isLoading && <Loader />}
 
       {onError && <Text textAlign="center">{onError}</Text>}
-      {movies && <MoviesListComponent movies={movies} />}
+      {movies && <MoviesList movies={movies} />}
     </>
   );
 };

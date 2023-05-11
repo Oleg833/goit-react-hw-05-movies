@@ -1,18 +1,18 @@
 import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
-  MovieList,
+  MovieListStyled,
   MovieItem,
   MovieLink,
   Img,
   MovieTitle,
-} from '../../pages/Home/Home.styled';
+} from './MoviesList.styled';
 
-const MovieListComponent = ({ movies }) => {
+const MovieList = ({ movies }) => {
   const location = useLocation();
 
   return (
-    <MovieList>
+    <MovieListStyled>
       {movies.map(({ id, title, original_title, poster }) => (
         <MovieItem key={id}>
           <MovieLink to={`/movies/${id}`} state={{ from: location }}>
@@ -30,11 +30,11 @@ const MovieListComponent = ({ movies }) => {
           </MovieLink>
         </MovieItem>
       ))}
-    </MovieList>
+    </MovieListStyled>
   );
 };
 
-MovieListComponent.propTypes = {
+MovieList.propTypes = {
   movies: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -45,4 +45,4 @@ MovieListComponent.propTypes = {
   ).isRequired,
 };
 
-export default MovieListComponent;
+export default MovieList;
