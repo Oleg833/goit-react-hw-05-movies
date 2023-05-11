@@ -12,6 +12,7 @@ import {
   InfoLink,
 } from './MovieDetails.styled';
 import { fetchMovieDetails } from 'services/image-service';
+import Text from 'components/Text/Text.styled';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
@@ -58,9 +59,9 @@ const MovieDetails = () => {
         Back to movies
       </Btn>
       {isLoading && <Loader />}
-      {onError && (
-        <p>We are sorry. Something went wrong. Please try again later</p>
-      )}
+
+      {onError && <Text textAlign="center">{onError}</Text>}
+
       {movie && (
         <div>
           <MovieContainer>
