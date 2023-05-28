@@ -20,7 +20,7 @@ const MovieList = ({ movies }) => {
               src={
                 poster
                   ? `https://image.tmdb.org/t/p/w200/${poster}`
-                  : 'https://cdn.pixabay.com/photo/2022/03/12/11/15/ukraine-7063987_1280.jpg'
+                  : `https://cdn.pixabay.com/photo/2022/03/12/11/15/ukraine-7063987_1280.jpg`
               }
               alt={title}
             />
